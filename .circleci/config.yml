@@ -55,8 +55,9 @@ jobs:
       - run:
           name: Do the docker build
           command: |
-            docker build -f ./src/main/docker/Dockerfile -t royjoydeep1/udemy-rsmortgage-config-service-docker:latest .
+            docker build -f ./src/main/docker/Dockerfile -t royjoydeep1/udemy-rsmortgage-config-service-docker-master:latest .
+
             #mkdir -p docker-cache
-            #docker save -o docker-cache/built-image.tar royjoydeep1/udemy-rsmortgage-config-service-docker
+            #docker save -o docker-cache/built-image.tar royjoydeep1/udemy-rsmortgage-config-service-docker-master
             docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-            docker push royjoydeep1/udemy-rsmortgage-config-service-docker:latest          
+            docker push royjoydeep1/udemy-rsmortgage-config-service-docker-master:latest          
